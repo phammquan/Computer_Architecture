@@ -133,18 +133,18 @@ namespace Oculus.Interaction
                     break;
             }
         }
-        private string logFilePath = "C:\\D\\Demo\\Computer_Architecture\\Assets\\log.json";
-
-        private void LogToFile(string message)
-        {
-            LogEntry logEntry = new LogEntry
-            {
-                Message = message,
-            };
-
-            string json = JsonUtility.ToJson(logEntry, true);
-            File.AppendAllText(logFilePath, json + Environment.NewLine);
-        }
+        // private string logFilePath = "C:\\D\\Demo\\Computer_Architecture\\Assets\\log.json";
+        //
+        // private void LogToFile(string message)
+        // {
+        //     LogEntry logEntry = new LogEntry
+        //     {
+        //         Message = message,
+        //     };
+        //
+        //     string json = JsonUtility.ToJson(logEntry, true);
+        //     File.AppendAllText(logFilePath, json + Environment.NewLine);
+        // }
 
         // Whenever we change the number of grab points, we save the
         // current transform data
@@ -177,9 +177,9 @@ namespace Oculus.Interaction
             {
                 return;
             }
-            string message = "Pick Up: " + gameObject.name + " Time: " + Time.time;
-            Debug.Log(message);
-            LogToFile(message);
+            // string message = "Pick Up: " + gameObject.name + " Time: " + Time.time;
+            // Debug.Log(message);
+            // LogToFile(message);
             _activeTransformer.BeginTransform();
         }
 
@@ -198,9 +198,9 @@ namespace Oculus.Interaction
             {
                 return;
             }
-            string message = "Drop: " + gameObject.name + " Time: " + Time.time;
-            Debug.Log(message);
-            LogToFile(message);
+            // string message = "Drop: " + gameObject.name + " Time: " + Time.time;
+            // Debug.Log(message);
+            // LogToFile(message);
             _activeTransformer.EndTransform();
             _activeTransformer = null;
         }

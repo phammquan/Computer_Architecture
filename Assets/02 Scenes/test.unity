@@ -1963,6 +1963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRHandPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1870938896605422, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2671,6 +2675,10 @@ PrefabInstance:
     - target: {fileID: 1870938896605422, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
       propertyPath: m_Name
       value: OVRHandPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870938896605422, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6325,7 +6333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -430595592972145483, guid: bf2b6a23aeb2e4d408f0d564d646d9c0, type: 3}
+  - {fileID: 2100000, guid: 8f5f2329d4763f841a1f3bd5ac4f1da8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6608,8 +6616,8 @@ GameObject:
   - component: {fileID: 1643796209}
   - component: {fileID: 1643796208}
   - component: {fileID: 1643796207}
-  - component: {fileID: 1643796206}
   - component: {fileID: 1643796205}
+  - component: {fileID: 1643796206}
   m_Layer: 0
   m_Name: Case2_0
   m_TagString: Untagged
@@ -6670,7 +6678,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 1643796205}
   _rigidbody: {fileID: 1643796207}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
@@ -7186,6 +7194,9 @@ GameObject:
   - component: {fileID: 1734222431}
   - component: {fileID: 1734222430}
   - component: {fileID: 1734222429}
+  - component: {fileID: 1734222435}
+  - component: {fileID: 1734222436}
+  - component: {fileID: 1734222437}
   m_Layer: 0
   m_Name: Plane_0
   m_TagString: Untagged
@@ -7202,7 +7213,7 @@ Transform:
   m_GameObject: {fileID: 1734222427}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70503026, y: -0, z: -0, w: 0.7091772}
-  m_LocalPosition: {x: 0.02555, y: -0.0279, z: 0.0119}
+  m_LocalPosition: {x: 0.02555, y: -0.0049, z: 0.012}
   m_LocalScale: {x: 0.67405, y: 0.3360158, z: 0.33239576}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7289,8 +7300,8 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 1734222436}
+  _twoGrabTransformer: {fileID: 1734222437}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
 --- !u!54 &1734222432
@@ -7370,6 +7381,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734222427}
   m_Mesh: {fileID: -8129902136384479411, guid: bf2b6a23aeb2e4d408f0d564d646d9c0, type: 3}
+--- !u!114 &1734222435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734222427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 1734222431}
+  _rigidbody: {fileID: 1734222432}
+  _scaleMassWithSize: 1
+--- !u!114 &1734222436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734222427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1734222437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734222427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 1
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 1
 --- !u!1 &1743951344
 GameObject:
   m_ObjectHideFlags: 0
@@ -7607,7 +7665,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1779201034
@@ -7698,7 +7756,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -10055,5 +10113,5 @@ SceneRoots:
   - {fileID: 1779201036}
   - {fileID: 1140337515}
   - {fileID: 1803839548}
-  - {fileID: 1987856877}
   - {fileID: 891326688}
+  - {fileID: 1987856877}
