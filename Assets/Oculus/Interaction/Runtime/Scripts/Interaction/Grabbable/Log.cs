@@ -12,7 +12,7 @@ namespace Oculus.Interaction
         {
             public string Name;
             public float Time;
-            public string Message;
+            public string Type;
             public string UserId;
         }
         
@@ -35,7 +35,7 @@ namespace Oculus.Interaction
         }
 
         // Phương thức static để gọi từ bất kỳ đâu
-        public static void WriteLog(string name, float time, string message)
+        public static void WriteLog(string name, float time, string type)
         {
             string url = "https://computerarchitecture-f871c-default-rtdb.asia-southeast1.firebasedatabase.app/ComputerArchitecture.json";
 
@@ -44,7 +44,7 @@ namespace Oculus.Interaction
                 UserId = UserManager.Instance.UserId, // Lấy ID của người dùng
                 Name = name,
                 Time = time,
-                Message = message
+                Type = type
             };
 
             // Chuyển dữ liệu thành chuỗi JSON
