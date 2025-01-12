@@ -18,6 +18,7 @@
  * limitations under the License.
  */
 
+// using Computer_Architecture;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -133,18 +134,6 @@ namespace Oculus.Interaction
                     break;
             }
         }
-        // private string logFilePath = "C:\\D\\Demo\\Computer_Architecture\\Assets\\log.json";
-        //
-        // private void LogToFile(string message)
-        // {
-        //     LogEntry logEntry = new LogEntry
-        //     {
-        //         Message = message,
-        //     };
-        //
-        //     string json = JsonUtility.ToJson(logEntry, true);
-        //     File.AppendAllText(logFilePath, json + Environment.NewLine);
-        // }
 
         // Whenever we change the number of grab points, we save the
         // current transform data
@@ -177,9 +166,9 @@ namespace Oculus.Interaction
             {
                 return;
             }
-            // string message = "Pick Up: " + gameObject.name + " Time: " + Time.time;
-            // Debug.Log(message);
-            // LogToFile(message);
+
+            Debug.Log("callapi Pick Up");
+            // Log.WriteLog("Pick Up", "callapi Pick Up");
             _activeTransformer.BeginTransform();
         }
 
@@ -198,9 +187,7 @@ namespace Oculus.Interaction
             {
                 return;
             }
-            // string message = "Drop: " + gameObject.name + " Time: " + Time.time;
-            // Debug.Log(message);
-            // LogToFile(message);
+            Debug.Log("callapi Drop");
             _activeTransformer.EndTransform();
             _activeTransformer = null;
         }
@@ -237,8 +224,4 @@ namespace Oculus.Interaction
         #endregion
     }
 }
-public class LogEntry
-{
-    public string Message;
-    public DateTime Timestamp;
-}
+
