@@ -43,6 +43,9 @@ namespace Oculus.Interaction
 
         [SerializeField]
         private int _maxGrabPoints = -1;
+        
+        [SerializeField] GameObject _log;
+
 
         public int MaxGrabPoints
         {
@@ -166,9 +169,8 @@ namespace Oculus.Interaction
             {
                 return;
             }
-
-            Debug.Log("callapi Pick Up");
-            // Log.WriteLog("Pick Up", "callapi Pick Up");
+            
+            Log.WriteLog(this.gameObject.name, Time.time , "Pick up");
             _activeTransformer.BeginTransform();
         }
 
@@ -187,7 +189,7 @@ namespace Oculus.Interaction
             {
                 return;
             }
-            Debug.Log("callapi Drop");
+            Log.WriteLog(this.gameObject.name, Time.time ,"Drop");
             _activeTransformer.EndTransform();
             _activeTransformer = null;
         }
@@ -223,5 +225,6 @@ namespace Oculus.Interaction
 
         #endregion
     }
+    
 }
 

@@ -5,6 +5,7 @@ public class UserManager : MonoBehaviour
 {
     // Lưu instance của Singleton
     private static UserManager _instance;
+    
 
     // Thuộc tính Instance cho phép truy cập duy nhất tới đối tượng Singleton
     public static UserManager Instance

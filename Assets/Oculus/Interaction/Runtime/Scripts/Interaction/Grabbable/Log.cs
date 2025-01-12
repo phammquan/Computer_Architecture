@@ -1,20 +1,23 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// namespace Computer_Architecture
-// {
-    public class Log : MonoBehaviour
+namespace Oculus.Interaction
+{
+      public class Log : MonoBehaviour
     {
         [System.Serializable]
         public class LogData
         {
             public string Name;
+            public float Time;
             public string Message;
             public string UserId;
         }
         
         private static Log _instance;
+        public static Log Instance => _instance;
 
         // Đảm bảo Log là Singleton và tồn tại giữa các scene
         private void Awake()
@@ -22,23 +25,25 @@ using UnityEngine.Networking;
             if (_instance == null)
             {
                 _instance = this;
-                DontDestroyOnLoad(gameObject);
+                return;
             }
-            else
+
+            if (_instance.gameObject.GetInstanceID() != this.gameObject.GetInstanceID())
             {
-                Destroy(gameObject);
+                Destroy(this.gameObject);   
             }
         }
 
         // Phương thức static để gọi từ bất kỳ đâu
-        public static void WriteLog(string name, string message)
+        public static void WriteLog(string name, float time, string message)
         {
-            string url = "https://test-cfc1a-default-rtdb.firebaseio.com/products.json";
+            string url = "https://computerarchitecture-f871c-default-rtdb.asia-southeast1.firebasedatabase.app/ComputerArchitecture.json";
 
             var data = new LogData
             {
                 UserId = UserManager.Instance.UserId, // Lấy ID của người dùng
                 Name = name,
+                Time = time,
                 Message = message
             };
 
@@ -64,4 +69,6 @@ using UnityEngine.Networking;
             }
         }
     }
-// }
+   
+}
+   
